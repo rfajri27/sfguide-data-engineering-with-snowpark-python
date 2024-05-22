@@ -1,0 +1,7 @@
+account = "lv05576.ap-southeast-3.aws"
+user = "fajri"
+password = "Rfajri27"
+role = "HOL_ROLE"
+warehouse = "HOL_WH"
+database = "HOL_DB"
+schema = "ANALYTICS"

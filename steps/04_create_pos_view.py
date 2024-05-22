@@ -107,7 +107,20 @@ def test_pos_view(session):
 # For local debugging
 if __name__ == "__main__":
     # Create a local Snowpark session
-    with Session.builder.getOrCreate() as session:
-        create_pos_view(session)
-        create_pos_view_stream(session)
+    connection_parameters = {
+        "account": "lv05576.ap-southeast-3.aws",
+        "user": "fajri",
+        "password": "Rfajri27",
+        "role": "HOL_ROLE",
+        "warehouse": "HOL_WH",
+        "database": "HOL_DB",
+        "schema": "ANALYTICS"
+    }
+    session = Session.builder.configs(connection_parameters).create()
+    create_pos_view(session)
+    create_pos_view_stream(session)
+    session.close()
+    # with Session.builder.getOrCreate() as session:
+    #     create_pos_view(session)
+    #     create_pos_view_stream(session)
 #        test_pos_view(session)
